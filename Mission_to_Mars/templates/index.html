@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Information</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data about Mars!</a></p>
+  </div>
+ 
+
+  <div class="row" id="Header_Summary">
+    <div class="col-md-6">
+      <h2> Latest Mars News</h2>
+      <h3 class="title">{{mars_dict.Title}}</h3>
+      <p> {{mars_dict.Summaries}}</p>
+    </div>
+    
+    <div class="col-md-6"> 
+      <h2> Current Weather</h2>
+      <p> The current weather at mars is {{mars_dict.Weather_Tweet}}</p>
+    </div>
+  </div>
+
+  <div class="row" id="Image_Tweet">
+    <div class="col-md-4">
+      <h2> Featured Image</h2>
+      <img src = {{mars_dict.Featured_Image_URL}} width="700" height="450"> 
+    </div>
+
+    <div class="col-md-4">
+    </div>
+    
+    <div class="col-md-4"> 
+      <h2> Mars Facts</h2>
+      {{mars_dict.Table | safe}}
+  </div>
+    </div>
+  </div>
+
+  <div class="row" id="Hemispheres">
+    <div class="col-md-12">
+      <h2 class = hem_title> Mars Hemispheres </h2>
+
+      {% for hemisphere in mars_dict.Image_URLS %}
+      
+      <div class="row" id="Hem_images">
+        <div class="col-md-6">
+          <img style = inline src = {{hemisphere.image_url}} width = "500" height = "500"> 
+          <h3> {{hemisphere.title}}</h3>
+       </div>
+      </div>  
+      {% endfor %}
+
+
+      <!-- <img src = {{mars_dict.Featured_Image_URL}} width="700" height="450">  -->
+   
+    </div>
+
+
+
+</div>
+  
+
+
+</body>
+
+</html>
