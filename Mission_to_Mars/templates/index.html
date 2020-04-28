@@ -20,12 +20,14 @@
   <div class="row" id="Header_Summary">
     <div class="col-md-6">
       <h2> Latest Mars News</h2>
+      <hr>
       <h3 class="title">{{mars_dict.Title}}</h3>
       <p> {{mars_dict.Summaries}}</p>
     </div>
     
     <div class="col-md-6"> 
       <h2> Current Weather</h2>
+      <hr>
       <p> The current weather at mars is {{mars_dict.Weather_Tweet}}</p>
     </div>
   </div>
@@ -33,6 +35,7 @@
   <div class="row" id="Image_Tweet">
     <div class="col-md-4">
       <h2> Featured Image</h2>
+      <hr>
       <img src = {{mars_dict.Featured_Image_URL}} width="700" height="450"> 
     </div>
 
@@ -41,28 +44,33 @@
     
     <div class="col-md-4"> 
       <h2> Mars Facts</h2>
+      <hr>
       {{mars_dict.Table | safe}}
   </div>
     </div>
-  </div>
+  
 
   <div class="row" id="Hemispheres">
     <div class="col-md-12">
       <h2 class = hem_title> Mars Hemispheres </h2>
+      <hr> 
 
       {% for hemisphere in mars_dict.Image_URLS %}
       
       <div class="row" id="Hem_images">
         <div class="col-md-6">
-          <img style = inline src = {{hemisphere.image_url}} width = "500" height = "500"> 
-          <h3> {{hemisphere.title}}</h3>
+          <div class="thumbnail">
+          <img class="card-img-top" src= {{hemisphere.image_url}} alt="Hem_images" style="width:70%">
+          <div class="card-body">
+            <h3 class="card-title text-center">{{ hemisphere.title }}</h3> 
+          </div>
        </div>
       </div>  
       {% endfor %}
 
 
       <!-- <img src = {{mars_dict.Featured_Image_URL}} width="700" height="450">  -->
-   
+    </div>
     </div>
 
 
