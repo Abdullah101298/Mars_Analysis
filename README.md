@@ -4,6 +4,6 @@
 
 ## Background 
 
-## Step 1 - Web Scraping 
+### Step 1 - Web Scraping 
 
-## Step 2 - Flask with MongoDB
+### Step 2 - Flask with MongoDB
