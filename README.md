@@ -8,6 +8,11 @@ We are going to scrape information from different websites to collect informatio
 
 ### Step 1 - Web Scraping 
 
+#### NASA Mars News 
+
+Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
+
+#### JPL Mars Space Images - Featured Image
 
 
 ### Step 2 - Flask with MongoDB
